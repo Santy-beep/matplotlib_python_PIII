@@ -14,40 +14,47 @@ import matplotlib.pyplot as plt
 def grid():
     # Veremos los distintos tipos de grids
     x = np.linspace(0, 10, 40)
-    
+    y1 = x**2
+    y2 = x**3
+    y3 = x**4
+    y4 = np.sqrt(x)
     fig = plt.figure()
     fig.suptitle('Grilla con 4 funciones', fontsize=16)
 
-    #ax1 = fig.add_subplot(1, 2, 1)
-    #ax2 = fig.add_subplot(1, 2, 2)
-    #ax3 = fig.add_subplot(2, 2, 3)
-    ax4 = fig.add_subplot(3, 2, 1)
+    ax1 = fig.add_subplot(2, 2, 1)
+    ax2 = fig.add_subplot(2, 2, 2)
+    ax3 = fig.add_subplot(2, 2, 3)
+    ax4 = fig.add_subplot(2, 2, 4)
 
-    ax1.plot(x, y1, color='darkred', label='y1 = x**2')
+    ax1.plot(x, y1, color='darkred', label='$y = x^2$')
     ax1.set_facecolor('whitesmoke')
     ax1.grid(ls='dashed')
     ax1.set_ylabel("Y[amplitud]")
     ax1.set_xlabel("X[rads]")
     ax1.legend()
-    ax2.plot(x, y2, color='green', label='y2 = x**3')
+    
+    ax2.plot(x, y2, color='green', label='$y2 = x^3$')
     ax2.set_facecolor('whitesmoke')
     ax2.grid(ls='dashed')
     ax2.set_ylabel("Y[amplitud]")
     ax2.set_xlabel("X[rads]")
     ax2.legend()
-    ax3.plot(x, y3, color='yellow', label='y3 = x**4')
+    
+    ax3.plot(x, y3, color='yellow', label='$y3 = x^4$')
     ax3.set_facecolor('whitesmoke')
     ax3.grid(ls='dashed')
     ax3.set_ylabel("Y[amplitud]")
     ax3.set_xlabel("X[rads]")
     ax3.legend()
-    ax4.plot(x, y4, color='pink', label='y4 = sqrt(x)')
+    
+    ax4.plot(x, y4, color='pink', label='$y = \sqrt{x}$')
     ax4.set_facecolor('whitesmoke')
     ax4.grid(ls='dashed')
     ax4.set_ylabel("Y[amplitud]")
     ax4.set_xlabel("X[rads]")
     ax4.legend()
-    
+
+    plt.tight_layout()
     plt.show()
 
 if __name__ == '__main__':
@@ -59,7 +66,7 @@ if __name__ == '__main__':
     # Se desea graficar cuatro funciones en una misma figura
     # en cuatros gráficos (axes) distintos. Para el siguiente
     # intervalor de valores de "X":
-    x = np.linspace(0, 10, 40)
+   
 
     # Realizar tres gráficos que representen
     # y1 = x^2 (X al cuadrado)
@@ -68,11 +75,6 @@ if __name__ == '__main__':
     # y4 = raiz_cuadrada(X)
 
     # Implementación:
-    y1 = x**2
-    y2 = x**3
-    y3 = x**4
-    y4 = np.sqrt(x)
-
     # Alumnos: Esos cuatro gráficos deben estar colocados
     # en la diposición de 2 filas y 2 columna:
     # ------
